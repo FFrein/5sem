@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  dllmain.cpp
+  MathFactory.cpp
+  Registry.cpp
+  SP02.cpp
+  Создание кода...
+F:\MyFile\Univer\5sem\Системное программирование (Смелов лк, лр Смайл(Лосевич Николай))\СП-02\Lab2\SP02_COM\SP02_COM.def(1): warning LNK4017: оператор LIBARY не поддерживается на конечной платформе; пропущен
+     Создается библиотека F:\MyFile\Univer\5sem\Системное программирование (Смелов лк, лр Смайл(Лосевич Николай))\СП-02\Lab2\Debug\SP02_COM.lib и объект F:\MyFile\Univer\5sem\Системное программирование (Смелов лк, лр Смайл(Лосевич Николай))\СП-02\Lab2\Debug\SP02_COM.exp
+  SP02_COM.vcxproj -> F:\MyFile\Univer\5sem\Системное программирование (Смелов лк, лр Смайл(Лосевич Николай))\СП-02\Lab2\Debug\SP02_COM.dll

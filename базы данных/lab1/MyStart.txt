@@ -1,0 +1,42 @@
+//9
+create table PNA_t (
+x number(3) primary key, 
+s varchar(50));
+//11
+insert into PNA_t(x, s) values (1,'some text1');
+insert into PNA_t(x, s) values (2, 'some text2');
+insert into PNA_t(x, s) values (3, 'some text3');
+
+COMMIT;
+//12
+UPDATE PNA_t set x = 2, s = 'text3' where x = 2;
+UPDATE PNA_t set x = 3, s = 'text2' where x = 3;
+
+COMMIT;
+//13
+SELECT x from PNA_t;
+SELECT AVG(x) from PNA_t; // с агрегатной функцией AVG
+//14
+Delete PNA_T where x = 1;
+Commit;
+//15
+Create table PNA_t1(
+    Info VARCHAR(60),
+    NumberX number(3),
+    foreign key (NumberX) REFERENCES PNA_t(x)
+);
+    
+insert into PNA_t1(Info, NumberX) values ('Info1', 0);
+  
+Commit;
+//16
+select * 
+    from PNA_t
+    LEFT JOIN PNA_t1 on pna_t.x = NumberX;
+    
+select * 
+    from PNA_t
+    RIGHT JOIN PNA_t1 on pna_t.x = NumberX;
+        
+//18    
+DROP table PNA_t

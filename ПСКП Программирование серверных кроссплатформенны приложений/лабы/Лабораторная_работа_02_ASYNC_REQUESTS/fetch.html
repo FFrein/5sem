@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id='result'></p>
+    <script>
+        result.innerHTML = '';
+        fetch('http://localhost:5000/api/name',{
+            method:'GET',
+            mode:'no-cors',
+            headers:{'Accept': 'application/json'}
+        }).then(response => {return response.json();})
+        .then((pdata)=>{
+            result.innerHTML += pdata.lastName +
+                                 ' ' + pdata.firstName +
+                                 ' ' + pdata.middleName;
+        })
+    </script>
+</body>
+</html>

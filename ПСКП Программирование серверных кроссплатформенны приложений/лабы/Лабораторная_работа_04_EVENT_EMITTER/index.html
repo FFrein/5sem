@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lec 04</h1>
+    <button onclick="Get()">GET</button>
+    <button onclick="Post()">POST</button>
+    <script>
+        function Post(){
+            console.log('POST');
+            fetch('http://localhost:5000/api/db',{
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify({id:ID.value})
+            }
+            ).fetch(response => {return response.json})
+            .fetch((pdata)=> {console.log('POST.pdata', pdata);})
+        }
+        function GET(){
+            console.log('GET');
+            fetch('http://localhost:5000/api/db',{
+                method: 'GET',
+                mode: 'no-cors',
+                headers:{'Content-Type':'application/json', 'Accept':'application/json'}
+            }
+            ).fetch(response => {return response.json})
+            .fetch((pdata)=> {
+                console.log('pdata', pdata);
+                get_result.innerHTML ='';
+                pdata.forEach(el => get_result.innerHTML += (
+                    el.id + '. ' +el.name + '</br>');
+            })
+        }
+    </script>
+</body>
+</html>
